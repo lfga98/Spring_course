@@ -8,29 +8,66 @@
     <!-- See configuration in WebMvConfig.java -->
     <link th:href="@{/bootstrap/css/bootstrap.min.css}"
           rel="stylesheet" media="screen"/>
-    <link th:href="@{resources/stylesheets/navbar.css}"
+    <link th:href="@{css/navbar.css}"
           rel="stylesheet" media="screen"/>
 
     <script th:src="@{/jquery/jquery.min.js}"></script>
     <script th:src="@{/popper/popper.min.js}"></script>
     <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<div >
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="navbar-header">
-            <a class="navbar-brand font-color">Sistema Escolar</a>
+
+    <nav class="navbar mynav navbar-default navbar-expand-lg  ">
+
+            <div class="navbar-header">
+                <a class="navbar-brand font-color">Sistema Escolar IC</a>
+            </div>
+
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link font-color" href="#">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-color" href="#">Calificaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-color" href="#">Inscripcion</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link font-color font-color" href="#"> Cerrar sesion</a>
+                </li>
+            </ul>
+
         </div>
     </nav>
-</div>
-<body>
+
+
+    <div class="container">
+        <div class="col-lg-3">
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="tittle"> Programas Academicos </h1>
+            </div>
+        </div>
+    </div>
 
 
 
 
 
-
-
-</body>
 
 </html>

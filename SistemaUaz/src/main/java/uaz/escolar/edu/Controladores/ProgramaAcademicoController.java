@@ -1,18 +1,18 @@
 package uaz.escolar.edu.Controladores;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import uaz.escolar.edu.Entidades.ProgramaAcademico;
 import uaz.escolar.edu.Servicios.ProgramaAcademicoServicio;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class ProgramaAcademicoController {
 
     @Autowired

@@ -1,5 +1,9 @@
 package uaz.escolar.edu.Entidades;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,6 +12,9 @@ public class ProgramaAcademico {
     @Id
     private int idProgramaAcademica;
     private String nombre;
+
+    public ProgramaAcademico() {
+    }
 
     public ProgramaAcademico(int idProgramaAcademica, String nombre) {
         this.idProgramaAcademica = idProgramaAcademica;

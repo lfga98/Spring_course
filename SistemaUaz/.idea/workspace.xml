@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9725d51d-a619-4e0c-ba95-c0be2bb1cc56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Dependencies/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dependencies/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Controladores/ProgramaAcademicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Controladores/ProgramaAcademicoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Servicios/ProgramaAcademicoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Servicios/ProgramaAcademicoServicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,7 +31,7 @@
         <counts>
           <entry key="html" value="895" />
           <entry key="java" value="1295" />
-          <entry key="properties" value="29" />
+          <entry key="properties" value="35" />
           <entry key="xml" value="26" />
         </counts>
       </usages-collector>
@@ -41,7 +39,7 @@
         <counts>
           <entry key="HTML" value="895" />
           <entry key="JAVA" value="1295" />
-          <entry key="Properties" value="29" />
+          <entry key="Properties" value="35" />
           <entry key="XML" value="26" />
         </counts>
       </usages-collector>
@@ -76,20 +74,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="15">
+              <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Controladores/ProgramaAcademicoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -212,11 +210,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/config/properties/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Repositorios/ProgramaAcademicoRepositorio.java" />
         <option value="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/SistemaUaz.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Entidades/ProgramaAcademico.java" />
         <option value="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Controladores/ProgramaAcademicoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Servicios/ProgramaAcademicoServicio.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -438,12 +436,12 @@
       <workItem from="1538514023647" duration="16000" />
       <workItem from="1538514274487" duration="7247000" />
       <workItem from="1538577108404" duration="7000" />
-      <workItem from="1538589893898" duration="930000" />
+      <workItem from="1538589893898" duration="1144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23614000" />
+    <option name="totallyTimeSpent" value="23828000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -472,8 +470,8 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32876712" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32871288" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32871288" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.21485148" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32876712" />
@@ -545,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uaz/escolar/edu/SistemaUaz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -615,11 +606,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uaz/escolar/edu/Controladores/ProgramaAcademicoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
         </state>
       </provider>
     </entry>

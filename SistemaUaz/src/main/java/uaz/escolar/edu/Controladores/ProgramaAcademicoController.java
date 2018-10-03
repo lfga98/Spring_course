@@ -27,8 +27,9 @@ public class ProgramaAcademicoController {
     public List<ProgramaAcademico> getAllProgramas() {
         return programaServicio.getAllPrograma();
     }
+
     @RequestMapping("/programas/{id}")
-    public ProgramaAcademico getTopic(@PathVariable("id") int idPrograma){
+    public ProgramaAcademico getPrograma(@PathVariable("id") int idPrograma){
         return programaServicio.getPrograma(idPrograma);
     }
 
@@ -39,7 +40,7 @@ public class ProgramaAcademicoController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/programas/{id}")
     public void updateTopic(@RequestBody ProgramaAcademico programa, @PathVariable("id") int idPrograma){
-        //programaServicio.updatePrograma(idPrograma,programa);
+        programaServicio.updatePrograma(idPrograma,programa);
     }
     @RequestMapping(method = RequestMethod.DELETE, value = "/programas/{id}")
     public void deleteTopic(@PathVariable("id") int idPrograma){

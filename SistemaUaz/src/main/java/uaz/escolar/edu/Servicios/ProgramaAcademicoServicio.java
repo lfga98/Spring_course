@@ -29,13 +29,14 @@ public class ProgramaAcademicoServicio {
         programaRepositorio.save(programa);
     }
 
-    public void updatePrograma(ProgramaAcademico programa){
+    public void updatePrograma(int idProgramaAcademico,ProgramaAcademico programa){
         programaRepositorio.save(programa);
     }
+
     public void deletePrograma(int id){
         programaRepositorio.deleteById(id);
     }
     public ProgramaAcademico getPrograma(int id){
-       return  programaRepositorio.findById(id).get();
+       return programaRepositorio.findById(id).get();
     }
 }

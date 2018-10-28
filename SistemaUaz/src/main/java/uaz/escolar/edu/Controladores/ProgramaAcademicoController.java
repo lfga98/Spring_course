@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import uaz.escolar.edu.Entidades.ProgramaAcademico;
 import uaz.escolar.edu.Servicios.ProgramaAcademicoServicio;
 
@@ -20,7 +21,7 @@ public class ProgramaAcademicoController {
 
     @RequestMapping("/progaca")
     public String helloWorld(Model model) {
-        return "Programa/index";
+        return "index";
     }
 
     @RequestMapping("/programas")
@@ -29,8 +30,11 @@ public class ProgramaAcademicoController {
     }
 
     @RequestMapping("/programas/{id}")
-    public ProgramaAcademico getPrograma(@PathVariable("id") int idPrograma){
-        return programaServicio.getPrograma(idPrograma);
+    public ModelAndView getPrograma(@PathVariable("id") int idPrograma){
+        ModelAndView mav = new ModelAndView("index");
+        mav.addObject("idProgramaAcademica",programaServicio.getPrograma(idPrograma).getIdProgramaAcademica());
+        mav.addObject("nombre",programaServicio.getPrograma(idPrograma).getNombre());
+        return mav;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/programas")

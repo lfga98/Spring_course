@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.dao.ClienteDaoImpl;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.entity.Cliente;
 
 import javax.persistence.PersistenceContext;
+import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
@@ -35,7 +37,11 @@ public class ClienteController {
     }
 
     @RequestMapping(value="/form", method = RequestMethod.POST)
-    public String guardar(Cliente cliente){
+    public String guardar(@Valid Cliente cliente, BindingResult results, Model model){
+        if(results.hasErrors()){
+            model.addAttribute("titulo","Formulario Cliente");
+            return "form";
+        }
         clienteDao.save(cliente);
         return "redirect:listar";
     }

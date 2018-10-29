@@ -1,5 +1,7 @@
 package uaz.ejemplo.edu.demouaz.ejemplo.edu.models.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -20,7 +22,9 @@ public class Cliente implements Serializable {
 
     @Column(name = "create_at")
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createAt;
+
 
     public Cliente() {
     }

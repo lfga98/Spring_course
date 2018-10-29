@@ -1,6 +1,7 @@
 package uaz.ejemplo.edu.demouaz.ejemplo.edu.models.dao;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.entity.Cliente;
 
 import javax.persistence.EntityManager;
@@ -20,6 +21,12 @@ public class ClienteDaoImpl implements IClienteDao{
     public List<Cliente> findAll() {
 
         return em.createQuery("from Cliente").getResultList();
+    }
+
+    @Override
+    @Transactional
+    public void save(Cliente cliente) {
+        em.persist(cliente);
     }
 
 }

@@ -1,10 +1,10 @@
 package uaz.ejemplo.edu.demouaz.ejemplo.edu.models.dao;
 
+import org.springframework.data.repository.PagingAndSortingRepository;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.entity.Cliente;
 
-import java.util.List;
 
-public interface IClienteDao {
-    public List<Cliente> findAll();
-    public void save(Cliente cliente);
+public interface IClienteDao extends PagingAndSortingRepository<Cliente, Long> {
+
+
 }

@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class FacturacionEjemploApplication extends SpringBootServletInitializer {
+public class SpringBootDataJpaApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FacturacionEjemploApplication.class, args);
+		SpringApplication.run(SpringBootDataJpaApplication.class, args);
 	}
 }

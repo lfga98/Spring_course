@@ -1,5 +1,6 @@
 package uaz.ejemplo.edu.demouaz.ejemplo.edu.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.entity.Cliente;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.service.IClienteService;
+import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.service.UploadServiceImp;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.util.paginator.PageRender;
 
 @Controller
@@ -33,6 +35,10 @@ public class ClienteController {
 
 	@Autowired
 	private IClienteService clienteService;
+
+	@Autowired
+	private UploadServiceImp uploadServiceImp;
+
 
 	private final Logger log = LoggerFactory.getLogger(getClass());
 
@@ -102,18 +108,19 @@ public class ClienteController {
 		}
 
 		if(!foto.isEmpty()){
-			String uniqueFilename = UUID.randomUUID().toString()+"_" +foto.getOriginalFilename();
-			Path rootPath =Paths.get("uploads").resolve(uniqueFilename);
-			Path rootAbsolutePath =rootPath.toAbsolutePath();
-			log.info("rootPath " +rootPath);
-			log.info("rootAbsolutePath"+rootAbsolutePath);
+
+			if(cliente.getId()!=null && cliente.getId() > 0 && cliente.getFoto()!=null && cliente.getFoto().length()>0){
+			uploadServiceImp.delete(cliente.getFoto());
+			}
+			String uniqueFilename= null;
 			try {
-				Files.copy(foto.getInputStream(),rootAbsolutePath);
-				flash.addFlashAttribute("info", "Has subido correctamente ' " + foto.getOriginalFilename() +" ' ");
-				cliente.setFoto(uniqueFilename);
+				uniqueFilename = uploadServiceImp.copy(foto);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+
+			flash.addFlashAttribute("info", "Has subido correctamente ' " + foto.getOriginalFilename() +" ' ");
+			cliente.setFoto(uniqueFilename);
 
 		}
 
@@ -130,8 +137,15 @@ public class ClienteController {
 	public String eliminar(@PathVariable(value="id") Long id, RedirectAttributes flash) {
 		
 		if(id > 0) {
+			Cliente cliente = clienteService.findOne(id);
+
 			clienteService.delete(id);
 			flash.addFlashAttribute("success", "Cliente eliminado con éxito!");
+			if (uploadServiceImp.delete(cliente.getFoto())){
+				flash.addFlashAttribute("info", "Foto: " +cliente.getFoto() + " eliminada con exito");
+			}
+
+
 		}
 		return "redirect:/listar";
 	}

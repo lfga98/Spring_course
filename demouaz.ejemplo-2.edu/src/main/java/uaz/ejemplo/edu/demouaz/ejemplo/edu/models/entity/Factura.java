@@ -84,12 +84,21 @@ public class Factura implements Serializable {
         this.createAt = createAt;
     }
 
-    public Double getTotal(){
-        Double total=0.0;
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Double getTotal() {
+        Double total = 0.0;
         int size = items.size();
-        for (int i=0;i<size;i++){
-            total+= items.get(i).calcularImporte();
+        for (int i = 0; i < size; i++) {
+            total += items.get(i).calcularImporte();
         }
+
         return total;
     }
 }

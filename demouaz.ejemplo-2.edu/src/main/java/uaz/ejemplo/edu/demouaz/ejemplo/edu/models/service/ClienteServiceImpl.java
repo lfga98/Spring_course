@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.dao.IClienteDao;
+import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.dao.IFacturaDao;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.dao.IProductoDao;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.entity.Cliente;
 import uaz.ejemplo.edu.demouaz.ejemplo.edu.models.entity.Factura;
@@ -22,7 +23,8 @@ public class ClienteServiceImpl implements IClienteService{
 	@Autowired
 	private IProductoDao productoDao;
 
-
+	@Autowired
+	private IFacturaDao facturaDao;
 
 	@Override
 	@Transactional(readOnly = true)
@@ -64,23 +66,26 @@ public class ClienteServiceImpl implements IClienteService{
 	}
 
 	@Override
+	@Transactional
 	public void saveFactura(Factura factura) {
-
+		facturaDao.save(factura);
 	}
 
 	@Override
+	@Transactional
 	public Producto findProductoById(Long id) {
-		return null;
+
+		return productoDao.findById(id).orElse(null);
 	}
 
 	@Override
 	public Factura findFacturaById(Long id) {
-		return null;
+		return facturaDao.findById(id).orElse(null);
 	}
 
 	@Override
 	public void deleteFactura(Long id) {
-
+		facturaDao.deleteById(id);
 	}
 
 
